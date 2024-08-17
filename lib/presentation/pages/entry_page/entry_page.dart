@@ -1,4 +1,5 @@
 import 'package:fitness_app/core/app_images.dart';
+import 'package:fitness_app/presentation/pages/entry_page/widgets/what_do_you_get_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,7 +12,7 @@ class EntryPage extends StatelessWidget {
       body: Stack(
         children: [
           //backbutton
-          
+
           //background
           Positioned(
             top: 0.h,
@@ -27,23 +28,24 @@ class EntryPage extends StatelessWidget {
           ),
           //entryimage1
           Positioned(
-            top: 52.r,
-            left: 199.r,
+            top: 52.h,
+            left: 199.h,
             child: Image.asset(
               AppImages.entryImageOne,
-              width: 145.2,
+              width: 145.w,
               height: 202.h,
             ),
           ),
-          //Text1
+          //Text
           Positioned(
             top: 116.h,
-            left: 20.w,
+            left: 36.w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Health Risk",
+                  textAlign: TextAlign.start,
+                  "Health Risk \n Assement",
                   style: TextStyle(
                     fontFamily: "Poppins",
                     fontWeight: FontWeight.w600,
@@ -51,22 +53,11 @@ class EntryPage extends StatelessWidget {
                     color: const Color(0xFF222E58),
                   ),
                 ),
-                Text(
-                  "Assement",
-                  style: TextStyle(
-                    fontFamily: "Poppins",
-                    fontWeight: FontWeight.w600,
-                    fontSize: 24.sp,
-                    color: const Color(0xFF222E58),
-                  ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
+                10.verticalSpace,
                 // time
                 Container(
-                  width: 60.w,
-                  height: 25.h,
+                  width: 62.w,
+                  height: 20.h,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10.r)),
@@ -75,8 +66,8 @@ class EntryPage extends StatelessWidget {
                     children: [
                       Image.asset(
                         AppImages.phTimer,
-                        width: 13.w,
-                        height: 18.h,
+                        width: 11.w,
+                        height: 13.h,
                       ),
                       Text(
                         " 4 min",
@@ -89,8 +80,58 @@ class EntryPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
+            ),
+          ),
+          Positioned(
+            left: 0.w,
+            right: 0.w,
+            bottom: 0.h,
+            top: 265.h,
+            child: Container(
+              padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 20.h),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30.r),
+                  topLeft: Radius.circular(30.r),
+                ),
+                color: Colors.white,
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "What do you get ? ",
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15.sp,
+                            color: const Color(0xFF222E58),
+                          ),
+                        ),
+                        15.verticalSpace,
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            whatDoYouGetWidget(
+                                image: AppImages.fiOne, title: "Key Body \n Vitals"),
+                            whatDoYouGetWidget(
+                                image: AppImages.fiTwo, title: "Posture \n Analysis"),
+                            whatDoYouGetWidget(
+                                image: AppImages.fiThree, title: "Body \n Composition"),
+                            whatDoYouGetWidget(
+                                image: AppImages.fiFour, title: "Instant \n Reports"),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],

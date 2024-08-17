@@ -1,14 +1,10 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:fitness_app/presentation/pages/entry_page/entry_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      enabled: true,
-      builder: (context) => MyApp(),
-    ),
+    const MyApp(),
   );
 }
 
@@ -21,9 +17,7 @@ class MyApp extends StatelessWidget {
     // print(screenHeigth);
     // print(screenWidth);
     return ScreenUtilInit(
-      designSize: const Size(
-          360, 640), // Set the design size of the UI you are working on
-      minTextAdapt: true,
+      designSize: const Size(360, 716),
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
