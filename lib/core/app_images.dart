@@ -7,4 +7,9 @@ class AppImages {
   static const String fiTwo = "$basePathImage/fi_2.png";
   static const String fiThree = "$basePathImage/fi_3.png";
   static const String fiFour = "$basePathImage/fi_4.png";
+
+  static const String backGroundCircle = "$basePathImage/bacgroundcircle.png";
+  static const String entryImageTwo = "$basePathImage/entryimage2.png";
+
+  static const String securityIcon = "$basePathImage/ic_outline-security.png";
 }
