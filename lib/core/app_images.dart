@@ -12,4 +12,10 @@ class AppImages {
   static const String entryImageTwo = "$basePathImage/entryimage2.png";
 
   static const String securityIcon = "$basePathImage/ic_outline-security.png";
+
+  //home page
+
+    static const String account = "$basePathImage/account.png";
+    static const String challengesImage = "$basePathImage/challengesimage.png";
+    static const String sdOne = "$basePathImage/sdone.png";
 }
