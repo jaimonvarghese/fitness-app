@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'widgets/my_assements.dart';
 import 'widgets/tab_bar_section.dart';
 import 'widgets/work_out_widget.dart';
 
@@ -37,17 +38,19 @@ class _HomePageState extends State<HomePage>
           child: Column(
             children: [
               const appBarWidget(),
-              TabBarSection(controller: _tabControler),
-              SizedBox(
-                height: 260.h,
+              TabBarSection(tabControler: _tabControler),
+              10.verticalSpace,
+              Container(
+                height: 303.h,
+                width: 338.w,
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF1F1F9),
+                  borderRadius: BorderRadius.circular(20.r),
+                ),
                 child: TabBarView(
                   controller: _tabControler,
                   children: [
-                    Container(
-                      child: Center(
-                        child: Text("tab1"),
-                      ),
-                    ),
+                    MyAssements(),
                     Container(
                       child: Center(
                         child: Text("tab2"),
@@ -56,6 +59,7 @@ class _HomePageState extends State<HomePage>
                   ],
                 ),
               ),
+              10.verticalSpace,
               //challenges
               const ChallengesWidget(),
               10.verticalSpace,
